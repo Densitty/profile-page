@@ -381,6 +381,69 @@ main {
 }
 /*------- about-me section ends ---------*/
 
+/*------- services section ---------*/
+#services {
+  padding: 6rem 2rem 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--primary-color);
+}
+
+.service {
+  flex-basis: 40rem;
+  flex-grow: 1;
+  margin: 0 2rem 4rem;
+  padding: 4rem;
+  background-color: var(--secondary-color);
+  border-bottom: 0.2rem solid var(--secondary-color);
+  border-right: 0.2rem solid var(--secondary-color);
+  border-left: 0.2rem solid var(--secondary-color);
+  position: relative;
+  z-index: 2;
+}
+
+.service::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: var(--primary-color);
+  transform: scaleX(0);
+  transition: transform 0.5s cubic-bezier(1, 0, 0, 1);
+  z-index: -1;
+}
+
+.service:hover::after,
+.service:active::after {
+  transform: scaleX(1);
+}
+
+.service i,
+.service--title {
+  margin-bottom: 2rem;
+}
+
+.service i {
+  color: #fff;
+  font-size: 3rem;
+}
+
+.services--title {
+  text-transform: uppercase;
+  font-size: 3rem;
+}
+
+.services--para {
+  font-family: "Indie Flower", cursive;
+  color: #fff;
+  font-size: 2rem;
+}
+/*------- services section ends ---------*/
+
 @media screen and (max-width: 900px) {
   #showcase {
     background-position: 100%;
@@ -494,7 +557,26 @@ main {
     transition: opacity 0.5s ease-in-out 1.2s;
   }
 
+  /*-------- showcase section ----------*/
   #showcase {
     background-position: 80%;
+  }
+
+  /*-------- services section ----------*/
+  #services {
+    padding: 6rem 3rem 2rem;
+  }
+
+  .service {
+    padding: calc(1rem + 2vw);
+    margin-bottom: calc(1rem + 2vw);
+  }
+
+  .services--title {
+    font-size: calc(1.2rem + 2vw);
+  }
+
+  .services--para {
+    font-size: calc(0.8rem + 1.5vw);
   }
 }
