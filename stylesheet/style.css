@@ -27,6 +27,7 @@ html {
 
   /* tertiary color modified */
   --tertiary-color-m: #01727498;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -614,8 +615,79 @@ main {
     width: 40%;
   }
 }
-
 /*------- skills section ends ---------*/
+
+/*----- testimonials section -----*/
+#testimonials {
+  padding: calc(1rem + 2vw);
+  background-color: var(--secondary-color);
+  color: #fff;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.testimonial {
+  // border: 1px solid red;
+  padding: 2vw;
+  flex-basis: 50rem;
+  flex-grow: 1;
+  position: relative;
+  overflow: hidden;
+}
+
+.testimonial__image {
+  // border: 1px solid green;
+  height: 100%;
+  width: 100%;
+  transition: all 0.35s ease-in-out;
+}
+
+.testimonial__image img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  transition: all 0.3s ease-in;
+  filter: grayscale(0);
+}
+
+.testimonial:hover .testimonial__image img {
+  filter: grayscale(0.5);
+  // transform: scale(1.05);
+}
+
+.testimonial__content {
+  position: absolute;
+  left: 0;
+  top: 60%;
+  background-color: var(--tertiary-color-m);
+  width: 80%;
+  padding: calc(1rem + 1vw);
+  transition: transform 0.5s ease-in-out 0.2s;
+  transform: scaleY(0);
+  transform-origin: top;
+}
+
+.testimonial:hover .testimonial__content,
+.testimonial:active .testimonial__content {
+  transform: scaleY(1);
+  transform-origin: center;
+}
+
+.testimonial__content__title {
+  font-size: 1.5rem;
+  text-transform: uppercase;
+}
+
+.testimonial__content__text {
+  font-size: 1.5rem;
+  font-family: "Indie Flower", cursive;
+}
+
+/*----- testimonials section ends -----*/
+
 /*---- cater for very large screens ----*/
 @media screen and (min-width: 1500px) {
   body {
@@ -763,13 +835,43 @@ main {
 
   .services--title,
   .skills__design--title,
-  .skills__coding--title {
+  .skills__coding--title,
+  .testimonial__content__title {
     font-size: calc(1.2rem + 2vw);
   }
 
   .services--para,
   .skills__design h4,
-  .skills__coding h4 {
+  .skills__coding h4,
+  .testimonial__content__text {
     font-size: calc(0.8rem + 1.5vw);
+  }
+
+  .testimonial__content__title {
+    font-size: calc(1rem + 0.8vw);
+  }
+
+  .testimonial__content__text {
+    font-size: calc(0.9rem + 0.5vw);
+    line-height: 1.2;
+  }
+}
+
+@media screen and (max-width: 460px) {
+  .testimonial__content {
+    top: 0;
+    height: 100%;
+    width: 100%;
+    transform: scaleY(0);
+    transform-origin: bottom;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+
+  .testimonial:hover .testimonial__content,
+  .testimonial:active .testimonial__content {
+    transform: scaleY(1);
+    transform-origin: bottom;
   }
 }
