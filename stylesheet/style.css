@@ -685,8 +685,49 @@ main {
   font-size: 1.5rem;
   font-family: "Indie Flower", cursive;
 }
-
 /*----- testimonials section ends -----*/
+
+/*----- contact section -----*/
+#contact {
+  height: 100vh;
+  background: url(../img/full-bg-03.jpg) top right/cover no-repeat;
+
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.contact {
+  flex-basis: 40rem;
+
+  display: flex;
+  flex-direction: column;
+  background-color: var(--tertiary-color-m);
+}
+
+.contact input,
+.contact textarea {
+  outline: none;
+  border: none;
+  background-color: var(--tertiary-color-m);
+  color: #fff;
+  font-family: "Indie Flower", cursive;
+  padding: 2rem;
+  letter-spacing: 0.2rem;
+  font-size: 1.5rem;
+  border-bottom: 0.1rem solid var(--secondary-color);
+}
+
+.contact textarea {
+  height: 30vh;
+}
+
+.contact input[type="button"] {
+  border: none;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+/*----- contact section ends -----*/
 
 /*---- cater for very large screens ----*/
 @media screen and (min-width: 1500px) {
@@ -873,5 +914,10 @@ main {
   .testimonial:active .testimonial__content {
     transform: scaleY(1);
     transform-origin: bottom;
+  }
+
+  /*----  ----*/
+  #contact {
+    background-position: 15% 5%;
   }
 }
