@@ -444,6 +444,186 @@ main {
 }
 /*------- services section ends ---------*/
 
+/*------- skills section ---------*/
+#skills {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+
+  padding: calc(1rem + 2vw);
+  background-color: var(--tertiary-color);
+}
+
+#skills > div {
+  /*border: 1px solid red;*/
+  padding: calc(1rem + 2vw);
+  flex-basis: 40rem;
+  flex-grow: 1;
+}
+
+.skills__design--title,
+.skills__coding--title {
+  font-size: calc(2rem + 1vw);
+  text-transform: uppercase;
+  margin-bottom: calc(1.5rem + 1vw);
+}
+
+.skills__design h4,
+.skills__coding h4 {
+  font-size: 2rem;
+  color: #fff;
+  font-weight: 400;
+}
+
+.skills__design--progress,
+.skills__coding--progress {
+  position: relative;
+  padding: 0.5rem;
+  border-radius: 3rem;
+  background-color: var(--primary-color);
+  margin-bottom: 2rem;
+  /* the properties below are not really needed */
+  // display: block;
+  // width: 100%;
+}
+
+.skills__design--progress span,
+.skills__coding--progress span {
+  position: relative;
+  display: relative;
+  vertical-align: middle;
+  height: 2rem;
+  /*width: 70%;*/
+  background-color: var(--secondary-color);
+  display: inline-block;
+  border-top-left-radius: 3rem;
+  border-bottom-left-radius: 3rem;
+}
+
+/* design skills animation */
+.skills__design--progress__1 {
+  animation: design-1 4s cubic-bezier(1, 0, 0, 1) infinite;
+}
+
+@keyframes design-1 {
+  from {
+    width: 0;
+  }
+  to {
+    width: 80%;
+  }
+}
+
+.skills__design--progress__2 {
+  animation: design-2 4s cubic-bezier(1, 0, 0, 1) infinite;
+}
+
+@keyframes design-2 {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 70%;
+  }
+}
+
+.skills__design--progress__3 {
+  animation: design-3 4s cubic-bezier(1, 0, 0, 1) infinite;
+}
+
+@keyframes design-3 {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 95%;
+  }
+}
+
+.skills__design--progress__4 {
+  animation: design-4 4s cubic-bezier(1, 0, 0, 1) infinite;
+}
+
+@keyframes design-4 {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 75%;
+  }
+}
+/* design skills animation ends */
+
+/* coding skills animation */
+.skills__coding--progress__1 {
+  animation: coding-1 4s cubic-bezier(1, 0, 0, 1) infinite;
+}
+
+@keyframes coding-1 {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 95%;
+  }
+}
+
+.skills__coding--progress__2 {
+  animation: coding-2 4s cubic-bezier(1, 0, 0, 1) infinite;
+}
+
+@keyframes coding-2 {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 80%;
+  }
+}
+
+.skills__coding--progress__3 {
+  animation: coding-3 4s cubic-bezier(1, 0, 0, 1) infinite;
+}
+
+@keyframes coding-3 {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 70%;
+  }
+}
+
+.skills__coding--progress__4 {
+  animation: coding-4 4s cubic-bezier(1, 0, 0, 1) infinite;
+}
+
+@keyframes coding-4 {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 40%;
+  }
+}
+
+/*------- skills section ends ---------*/
+/*---- cater for very large screens ----*/
+@media screen and (min-width: 1500px) {
+  body {
+    width: 1500px;
+    margin: 0 auto;
+  }
+}
+
 @media screen and (max-width: 900px) {
   #showcase {
     background-position: 100%;
@@ -557,6 +737,15 @@ main {
     transition: opacity 0.5s ease-in-out 1.2s;
   }
 
+  /*----- about-me -----*/
+  .about-me__content--title {
+    font-size: calc(1.2rem + 2vw);
+  }
+
+  .about-me__content--para {
+    font-size: calc(1rem + 2vw);
+  }
+
   /*-------- showcase section ----------*/
   #showcase {
     background-position: 80%;
@@ -572,11 +761,15 @@ main {
     margin-bottom: calc(1rem + 2vw);
   }
 
-  .services--title {
+  .services--title,
+  .skills__design--title,
+  .skills__coding--title {
     font-size: calc(1.2rem + 2vw);
   }
 
-  .services--para {
+  .services--para,
+  .skills__design h4,
+  .skills__coding h4 {
     font-size: calc(0.8rem + 1.5vw);
   }
 }
